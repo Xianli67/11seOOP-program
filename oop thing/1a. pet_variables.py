@@ -1,11 +1,11 @@
 name = 'Bonnie'
 animal_category = 'Cat'
-age = 3
-vaccinated = True
+age = 4
+vaccinated = False
 ccard = '3423 2326 7543 1234'
-billing_address = '17 Park Drive, The Shire 2695'
-owner_name = 'Alex Ngyuen'
-account_balance = 129.95
+billing_address = '17 parak street, The Shire 2695'
+owner_name = 'Alex Jones'
+account_balance = 104.95
 
 # ACTIVITIES:
 #Theere are many ways to complete these tasks. How will you do them?
@@ -15,3 +15,5 @@ account_balance = 129.95
 #4 Prompt user for updated credit card number and save new number
 #5 Change owner name to Alex Jones
 #6 Subtract $25 from account balance
+
+print(name)

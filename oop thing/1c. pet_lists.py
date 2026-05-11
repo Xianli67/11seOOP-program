@@ -18,3 +18,15 @@ Vaccination Status: False
 #1. Add a new animal named Hootie, its a blowfish, it is 34 years
 #2. Vaccinate an unvaccinated animal (create vaccination)
 #3. Remove an animal and make sure that all the printing is correct
+
+pet_name = ['Foxy', 'Bella', 'Hootie']
+animal_cat = ['Dog', 'Rabbit', 'blowfish']
+ages = [8,3,34]
+vacciated = [False, True, False]
+
+for i in range(len(pet_name)):
+    print('Pet name:',pet_name[i])
+    print('Category:',animal_cat[i])
+    print('age:',ages[i])
+    print('vaccinated:',vacciated[i])
+    print(' ')

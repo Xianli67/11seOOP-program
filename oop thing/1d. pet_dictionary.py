@@ -14,6 +14,17 @@ pet1 = {
 'account balance' : 129.95,
 }
 
+for item in pet1:
+    print(item,':', pet1[item])
+
+print(' ')
+
+pet1['name'] = 'miss bonnie'
+pet1['age'] = pet1['age'] + 1
+
+for item in pet1:
+    print(item,':', pet1[item])
+
 
 
 #ACTIVITIES:
