@@ -10,7 +10,6 @@ class Pet:
         self.ccard = 'unknown'
         self.vaccinated = False
         self.ccard = 'unknown'
-        self.vaccinated = False
     
     def __str__(self):
         payment_stat = 'unregistered'

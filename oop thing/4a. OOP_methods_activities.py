@@ -13,8 +13,32 @@ class Pet:
     
     def have_birthday(self):
         self.age += 1
+
+    def vaccinated(self):
+        self.vaccinated = True
+
+    def clear_balance(self):
+        self.account_balance = 0
+
+    def calculate_human_age(self):
+        if self.category == 'Dog':
+            print(self.name,'human age:',self.age*7)
+        elif self.category == 'Cat':
+            print(self.name,'human age:',self.age*7)
     
+    def __str__(self):
+        payment_stat = 'unregistered'
+        if len(self.ccard) == 19:
+            payment_stat = 'registered'
+        
+        my_stat = 'name: '+ self.name + '\ncategory: ' + self.category + '\nage: ' + str(self.age) + '\npayment status: ' + payment_stat + '\nvaccinated:' + str(self.vaccinated)
+        return my_stat
     
+p1 = Pet('Bonnie', 'Cat', 10)
+p1.have_birthday()
+    
+print(p1)
+p1.calculate_human_age()
 
 #ACTIVITIES:
 #1. Add another method to vaccinate the pet

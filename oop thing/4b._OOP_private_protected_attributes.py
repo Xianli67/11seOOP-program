@@ -23,7 +23,8 @@ class Pet:
         return my_status
 
 p1 = Pet(name = 'Bonnie', category = 'Cat', age = 10)
-print(p1)
+p1._name = 'adfa'
+print(p1._name)
 
 #ACTIVITIES:
 #1. Make category a private attribute than test to make sure it can't be changed once created

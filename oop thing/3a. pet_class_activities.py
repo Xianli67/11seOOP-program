@@ -9,7 +9,7 @@ class Pet:
         self.vaccinated = False
         self.card = 'unknwon'
         self.owner_name = 'unknown'
-        sefl.balance = 0
+        self.balance = 0
 p1 = Pet('bonnie', 'cat', 3)
 
 print(p1.name)
@@ -23,7 +23,7 @@ vaccinated = False
 ccard = '3423 2326 7543 1234'
 billing_address = '17 parak street, The Shire 2695'
 owner_name = 'Alex Jones'
-account_balance = 104.95
+account_balance = 104.955
 
 
 #ACTIVITIES:

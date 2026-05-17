@@ -9,14 +9,17 @@ class Car:
         self.model = model
         self.year = year
         self.price = price
+        self.sale = False
 
     def __str__(self):
+        return '| Make: ' + self.make + ' | model: ' + self.model + ' | For sale: ' + str(self.sale)
 
 
 c1 = Car('Mazda','6',2005)
-
+c2 = Car('Totoya', '67', 2067)
 
 cars = [c1]
+cars.append(c2)
 
 for car in cars:
     print(car)
