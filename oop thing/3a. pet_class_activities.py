@@ -10,9 +10,13 @@ class Pet:
         self.card = 'unknwon'
         self.owner_name = 'unknown'
         self.balance = 0
+
+    def name(self):
+        return print(self.name)
+
 p1 = Pet('bonnie', 'cat', 3)
 
-print(p1.name)
+p1.name()
 
 
 
