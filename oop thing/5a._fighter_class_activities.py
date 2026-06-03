@@ -51,6 +51,23 @@ class Fighter:
         else:
             print('no damage')
 
+class Melee(Fighter):
+    def __init__(self,name, starting_health, weapon, shield, rage):
+        super().__init__(name, starting_health, weapon, shield)
+        self.rage = rage
+
+class tank(Fighter):
+    def __init__(self,name, starting_health, weapon, shield, rage):
+        super().__init__(name, starting_health, weapon, shield)
+        self.rage = rage
+
+class jester(Fighter):
+    def __init__(self,name, starting_health, weapon, shield, rage):
+        super().__init__(name, starting_health, weapon, shield)
+        self.rage = rage
+
+
+
 you = Fighter('You', 100, 60, 20)
 troll = Fighter('troll', 200, 30, 10)
 
