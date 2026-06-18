@@ -94,7 +94,7 @@ class Fighter:
 
     #handles player's input attacks
     def initiate_attack(self):
-        fight_input = input('press enter to attack, t for "tactical retreat"')
+        fight_input = input('\npress enter to attack \nt for "tactical retreat"\n')
         if fight_input == 't':
             return 'b'
         else:
@@ -169,13 +169,13 @@ def enemy_spawn_forest():
     rng = random.randint(1, 30)
 
     if rng <= 10:
-        return forest('slime', 30, 20, 0, 100, 6)
+        return forest('slime', 30, 20, 0, 600, 6)
 
     elif rng <= 20:
-        return forest('evil pig', 40, 30, 0, 120, 7)
+        return forest('evil pig', 40, 30, 0, 600, 7)
 
     else:
-        return forest('rotten bear', 50, 35, 0, 150, 8)
+        return forest('rotten bear', 50, 35, 0, 650, 8)
     
 #spawns the enemies in the hell biome and helps keep the hell enemy spawn randomlized 
 def enemy_spawn_hell():
@@ -190,49 +190,49 @@ def enemy_spawn_hell():
     else:
         return hell('demon', 200, 50, 10, 180, 30)
 
-input('Press Enter to begin')
-time.sleep(1)
-print('???: Wake up, hero.')
-time.sleep(2)
-print('You: ...')
-time.sleep(1)
-print('You: Where am I?')
-time.sleep(2)
-print('???: You are in the Cave of Awakening.')
-time.sleep(2)
-print('???: You are safe here.')
-time.sleep(2)
-print('You: Huh? Who are you?')
-time.sleep(2)
-print('You: Where is your voice coming from?')
-time.sleep(2)
-print('???: I am the god of this world.')
-time.sleep(2)
-print('???: My powers are fading, and I need your help.')
-time.sleep(2)
-print('???: Corruption spreads throughout the outside world.')
-time.sleep(2)
-print('???: Unfriendly creatures and monsters roam these lands.')
-time.sleep(2)
-print('???: Venture outside this cave, fight the monsters, grow stronger, and conquer the corruption.')
-time.sleep(2)
-input('Press Enter to leave the cave...')
+# input('Press Enter to begin')
+# time.sleep(1)
+# print('???: Wake up, hero.')
+# time.sleep(2)
+# print('You: ...')
+# time.sleep(1)
+# print('You: Where am I?')
+# time.sleep(2)
+# print('???: You are in the Cave of Awakening.')
+# time.sleep(2)
+# print('???: You are safe here.')
+# time.sleep(2)
+# print('You: Huh? Who are you?')
+# time.sleep(2)
+# print('You: Where is your voice coming from?')
+# time.sleep(2)
+# print('???: I am the god of this world.')
+# time.sleep(2)
+# print('???: My powers are fading, and I need your help.')
+# time.sleep(2)
+# print('???: Corruption spreads throughout the outside world.')
+# time.sleep(2)
+# print('???: Unfriendly creatures and monsters roam these lands.')
+# time.sleep(2)
+# print('???: Venture outside this cave, fight the monsters, grow stronger, and conquer the corruption.')
+# time.sleep(2)
+# input('Press Enter to leave the cave...')
 
 
 #prints out the menu depending on what level you are and wether if you have defeated the forest boss
 while game_over == False:
     if boss_defeated == True:
-        print('current biome: forest')
-        print('q to look at your stats, f to fight monsters, h to go back to cave and heal, g to fight boss, m to adavnce to hell biome')
+        print('\ncurrent biome: Forest \n----------------------')
+        print('q to look at your stats\nf to fight monsters\nh to go back to cave and heal \ng to fight boss \nm to adavnce to hell biome')
         selection = input()
     
     elif you.level >= 5:
-        print('current biome: forest')
-        print('q to look at your stats, f to fight monsters, h to go back to cave and heal, g to fight boss')
+        print('\ncurrent biome: Forest \n ----------------------')
+        print('q to look at your stats\nf to fight monsters\nh to go back to cave and heal \ng to fight boss')
         selection = input()
     else:
-        print('current biome: forest')
-        print('q to look at your stats, f to fight monsters, h to back to cave and heal')
+        print('\ncurrent biome: Forest \n ----------------------')
+        print('q to look at your stats\nf to fight monsters\nh to go back to cave and heal')
         selection = input()
 
     while selection == 'h':
@@ -246,9 +246,9 @@ while game_over == False:
 
     #prints out the player stats
     while selection == 'q':
-        print('Level: ' + str(you.level))
+        print('\nLevel: ' + str(you.level))
         print('Max hp: ' + str(you.max_health))
-        print('Attack strenght: ' + str(you.weapon))
+        print('Attack strength: ' + str(you.weapon))
         print('Defense: ' + str(you.shield))
 
         if isinstance(you, Melee):
@@ -267,7 +267,7 @@ while game_over == False:
             while selection != 'b' and game_over == False:
                 time.sleep(1)
                 enemy = enemy_spawn_forest()
-                print('You have encountered a ' + enemy.name)
+                print('\nYou have encountered a ' + enemy.name)
                 enemy.report()
 
                 while not enemy.is_dead() and not you.is_dead():
