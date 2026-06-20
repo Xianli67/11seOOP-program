@@ -157,7 +157,7 @@ class hell(Fighter):
         self.eternal_flame = eternal_flame
 
 
-you = Fighter('You', 150, 20, 5, 0)
+you = Fighter('You', 50, 5, 0, 0)
 forest_boss = forest('King slime', 300, 50, 20, 500, 20)
 
 
@@ -190,8 +190,61 @@ def enemy_spawn_hell():
     else:
         return hell('demon', 200, 50, 10, 180, 30)
     
+
     
-# input('Press Enter to begin')
+    
+input('Press Enter to begin')
+
+print("=== Character Creation ===")
+print("You have 100 stat points to spend.")
+print("1 point = +2 Max HP")
+print("1 point = +0.25 Attack strength")
+print("1 point = +0.25 Defense")
+print(f'\nyour current stats: \nmax hp: {you.max_health}\nAttack strengh: {you.weapon}\ndefense: {you.shield} ')
+print()
+
+points = 100
+
+hp_points = 0
+attack_points = 0
+defense_points = 0
+
+while True:
+    try:
+        hp_add = int(input("Points into Health: "))
+        attack_add = int(input("Points into Attack: "))
+        defense_add = int(input("Points into Defense: "))
+
+    except ValueError:
+        print("Please enter whole numbers only. Try again.\n")
+        continue 
+
+    hp_points += hp_add
+    attack_points += attack_add
+    defense_points += defense_add
+
+    total = hp_points + attack_points + defense_points
+
+
+    if total > points:
+        print(f"You spent {total} points but only have {points}. Try again.\n")
+        hp_points = 0
+        attack_points = 0
+        defense_points = 0
+        continue
+
+    if total < points:
+        print(f"You still have {points - total} unspent points. Try again.\n")
+        continue
+
+    break
+
+you.max_health += 2 * hp_points
+you.weapon += 0.25 * attack_points
+you.shield += 0.25 * defense_points
+print(f'\nyour current stats: \nmax hp: {you.max_health}\nAttack strength: {you.weapon}\ndefense: {you.shield} ')
+
+
 # time.sleep(1)
 # print('???: Wake up, hero.')
 # time.sleep(2)
