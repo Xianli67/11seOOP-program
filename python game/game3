@@ -169,10 +169,10 @@ def enemy_spawn_forest():
     rng = random.randint(1, 30)
 
     if rng <= 10:
-        return forest('slime', 30, 20, 0, 600, 6)
+        return forest('slime', 30, 20, 0, 100, 6)
 
     elif rng <= 20:
-        return forest('evil pig', 40, 30, 0, 600, 7)
+        return forest('evil pig', 40, 30, 0, 120, 7)
 
     else:
         return forest('rotten bear', 50, 35, 0, 650, 8)
@@ -195,11 +195,17 @@ def enemy_spawn_hell():
     
 input('Press Enter to begin')
 
+time.sleep(1)
 print("=== Character Creation ===")
+time.sleep(1)
 print("You have 100 stat points to spend.")
+time.sleep(1)
 print("1 point = +2 Max HP")
+time.sleep(1)
 print("1 point = +0.25 Attack strength")
+time.sleep(1)
 print("1 point = +0.25 Defense")
+time.sleep(1)
 print(f'\nyour current stats: \nmax hp: {you.max_health}\nAttack strengh: {you.weapon}\ndefense: {you.shield} ')
 print()
 
@@ -212,11 +218,16 @@ defense_points = 0
 while True:
     try:
         hp_add = int(input("Points into Health: "))
+        time.sleep(1)
         attack_add = int(input("Points into Attack: "))
+        time.sleep(1)
         defense_add = int(input("Points into Defense: "))
+        time.sleep(1)
 
     except ValueError:
+        time.sleep(1)
         print("Please enter whole numbers only. Try again.\n")
+        time.sleep(1)
         continue 
 
     hp_points += hp_add
@@ -234,15 +245,24 @@ while True:
         continue
 
     if total < points:
-        print(f"You still have {points - total} unspent points. Try again.\n")
+        print(f"You still have {points - total} unspent points.\n")
         continue
+
+    if total == points:
+        you.max_health += 2 * hp_points
+        you.weapon += 0.25 * attack_points
+        you.shield += 0.25 * defense_points
+        begin_game = input((f'\nyour current stats: \nmax hp: {you.max_health}\nAttack strength: {you.weapon}\ndefense: {you.shield}\n\npress r to reset character creation\npress enter to begin game\n'))
+
+        if begin_game == 'r':
+            hp_points = 0
+            attack_points = 0
+            defense_points = 0
+            print(' ')
+            continue
 
     break
 
-you.max_health += 2 * hp_points
-you.weapon += 0.25 * attack_points
-you.shield += 0.25 * defense_points
-print(f'\nyour current stats: \nmax hp: {you.max_health}\nAttack strength: {you.weapon}\ndefense: {you.shield} ')
 
 
 # time.sleep(1)
@@ -276,16 +296,16 @@ print(f'\nyour current stats: \nmax hp: {you.max_health}\nAttack strength: {you.
 #prints out the menu depending on what level you are and wether if you have defeated the forest boss
 while game_over == False:
     if boss_defeated == True:
-        print('\ncurrent biome: Forest \n----------------------')
+        print('\n=== current biome: Forest ===\n-------------------------')
         print('q to look at your stats\nf to fight monsters\nh to go back to cave and heal \ng to fight boss \nm to adavnce to hell biome')
         selection = input()
     
     elif you.level >= 5:
-        print('\ncurrent biome: Forest \n ----------------------')
+        print('\n=== current biome: Forest ===\n-------------------------')
         print('q to look at your stats\nf to fight monsters\nh to go back to cave and heal \ng to fight boss')
         selection = input()
     else:
-        print('\ncurrent biome: Forest \n ----------------------')
+        print('\n=== current biome: Forest ===\n-------------------------')
         print('q to look at your stats\nf to fight monsters\nh to go back to cave and heal')
         selection = input()
 
